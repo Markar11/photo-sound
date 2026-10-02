@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Clickable Photo</title>
+
+    <style>
+        html, body {
+            margin: 0;
+            width: 100%;
+            height: 100%;
+            background: black;
+            overflow: hidden;
+        }
+
+        img {
+            width: 100vw;
+            height: 100vh;
+            object-fit: contain;
+            display: block;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <img id="photo" src="photo.jpg">
+
+    <audio id="sound" src="sound.mp3"></audio>
+
+    <script>
+        const photo = document.getElementById("photo");
+        const sound = document.getElementById("sound");
+
+        photo.addEventListener("click", () => {
+            sound.currentTime = 0;
+            sound.play();
+        });
+    </script>
+
+</body>
+</html>
